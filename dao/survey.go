@@ -2,6 +2,7 @@ package dao
 
 import (
 	"fmt"
+	"time"
 
 	"gopkg.in/mgo.v2/bson"
 )
@@ -22,6 +23,7 @@ type Survey struct {
 	Description string     `json:"description" bson:"description"`
 	Questions   []Question `json:"questions" bson:"questions"`
 	Status      bool       `json:"status" bson:"status"`
+	Expiry      time.Time  `json:"expiry" bson:"expiry"`
 }
 
 type SurveyResponse struct {
